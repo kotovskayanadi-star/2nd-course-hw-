@@ -22,8 +22,11 @@
     text-align: center;
     justify-content: center;
   }
-  .hero__text span {
-    display: inline;
+  .hero__text--desktop {
+    display: none;
+  }
+  .hero__text--mobile {
+    display: block;
   }
   .hero__button {
     width: 100%;

@@ -24,9 +24,15 @@
             text-align: center;
             justify-content: center;
 
-            span {
-                display: inline;
-            }
+
+        }
+
+        &__text--desktop {
+            display: none;
+        }
+
+        &__text--mobile {
+            display: block;
         }
 
         &__button {
