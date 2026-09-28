@@ -50,7 +50,7 @@
     }
 
     .container {
-        width: calc(100% - 36px);
+
         min-height: 371px;
 
         margin: 0 auto;
@@ -77,7 +77,8 @@
     .about-games {
         display: none;
     }
-.mini-games {
+
+    .mini-games {
         width: 100%;
 
         padding: 64px 0 80px;
@@ -131,7 +132,7 @@
             order: 1;
 
             width: 100%;
-            height: auto;
+            height: 285px;
 
             aspect-ratio: 1 / 1;
             object-fit: cover;
@@ -181,21 +182,22 @@
             }
         }
     }
-.footer {
-    height: 100px;
 
-    &__text {
-        width: auto;
-        height: 20px;
+    .footer {
+        height: 100px;
 
-        font-size: 16px;
-        line-height: 20px;
+        &__text {
+            width: auto;
+            height: 20px;
 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
+            font-size: 16px;
+            line-height: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
     }
-}
 
 }
