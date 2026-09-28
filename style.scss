@@ -100,8 +100,9 @@
     }
   }
 }
+
 .hero__text--mobile {
-    display: none;
+  display: none;
 }
 
 .container {
@@ -481,4 +482,4 @@
   }
 }
 
-@import "mobile";
+@import "_mobile";

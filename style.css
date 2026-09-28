@@ -418,7 +418,6 @@
     border-color: #202027;
   }
   .container {
-    width: calc(100% - 36px);
     min-height: 371px;
     margin: 0 auto;
     gap: 36px;
@@ -478,7 +477,7 @@
   .mini-game__image {
     order: 1;
     width: 100%;
-    height: auto;
+    height: 285px;
     aspect-ratio: 1/1;
     -o-object-fit: cover;
        object-fit: cover;
