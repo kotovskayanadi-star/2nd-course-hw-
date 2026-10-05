@@ -139,8 +139,8 @@
 
       <div class="mini-games__list">
 
-        <div class="mini-game">
-          <div class="mini-game__content" id="game1">
+        <div class="mini-game" id="game1" >
+          <div class="mini-game__content" >
             <h3 class="mini-game__title">Угадай число</h3>
 
             <p class="mini-game__text">
@@ -157,10 +157,10 @@
 
 
 
-        <div class="mini-game">
+        <div class="mini-game" id="game2">
           <img class="mini-game__image" src="./img/game2.png" alt="Простая арифметика">
 
-          <div class="mini-game__content" id="game2">
+          <div class="mini-game__content" >
             <h3 class="mini-game__title">Простая арифметика</h3>
 
             <p class="mini-game__text">
@@ -174,8 +174,8 @@
         </div>
 
 
-        <div class="mini-game">
-          <div class="mini-game__content" id="game3">
+        <div class="mini-game" id="game3">
+          <div class="mini-game__content" >
             <h3 class="mini-game__title">Переверни текст</h3>
 
             <p class="mini-game__text">
@@ -191,10 +191,10 @@
         </div>
 
 
-        <div class="mini-game">
+        <div class="mini-game" id="game4">
           <img class="mini-game__image" src="./img/game4.png" alt="Камень, ножницы, бумага">
 
-          <div class="mini-game__content" id="game4">
+          <div class="mini-game__content" >
             <h3 class="mini-game__title">
               Камень, ножницы, бумага
             </h3>
@@ -210,15 +210,15 @@
         </div>
 
 
-        <div class="mini-game">
-          <div class="mini-game__content" id="game5">
+        <div class="mini-game" id="game5">
+          <div class="mini-game__content" >
             <h3 class="mini-game__title">Простая викторина</h3>
 
             <p class="mini-game__text">
               Отвечай на вопросы викторины с вариантами ответов.
             </p>
 
-            <a href="#" class="mini-game__button">
+            <a href="#" class="mini-game__button" onclick="playQuiz(event)">
               Играть!
             </a>
           </div>
@@ -227,10 +227,10 @@
         </div>
 
 
-        <div class="mini-game">
+        <div class="mini-game" id="game6">
           <img class="mini-game__image" src="./img/game6.png" alt="Генератор случайных цветов">
 
-          <div class="mini-game__content" id="game6">
+          <div class="mini-game__content" >
             <h3 class="mini-game__title">
               Генератор случайных цветов
             </h3>
@@ -251,6 +251,7 @@
   <footer class="footer">
     <p class="footer__text">Все права защищены.</p>
   </footer>
+  <script src="./quiz.js"></script>
 </body>
 
 </html>
