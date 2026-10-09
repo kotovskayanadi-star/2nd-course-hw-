@@ -407,7 +407,7 @@
     display: block;
   }
   .hero__button {
-    max-width: 285px;
+    width: 285px;
     height: 55px;
     font-size: 16px;
     margin-top: 36px;
@@ -506,7 +506,7 @@
   }
   .mini-game__button {
     width: 100%;
-    max-width: 285px;
+    width: 285px;
     height: 55px;
     margin-top: 32px;
     padding: 16px 28px;
