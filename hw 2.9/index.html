@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Практика DOM</title>
+</head>
+
+<body>
+
+    <h1>Задание 1. Скрытие и показ текста</h1>
+
+    <h1 class="toggle-title">Мой заголовок</h1>
+    <button class="toggle-button">Скрыть</button>
+
+    <hr>
+
+    <h2>Задание 2. Изменение стиля элемента</h2>
+
+    <p class="color-text">Это текст, цвет которого изменится на синий</p>
+    <button class="color-button">Изменить цвет</button>
+
+    <hr>
+
+    <h2>Задание 3. Динамическое изменение текста</h2>
+
+    <h1 class="change-title">Исходный текст</h1>
+    <button class="change-button">Изменить текст</button>
+
+    <hr>
+
+    <h2>Задание 4. Поиск и изменение элементов по классу</h2>
+
+    <p class="description">Первый текст</p>
+    <p class="description">Второй текст</p>
+    <p class="description">Третий текст</p>
+
+    <hr>
+
+    <h2>Задание 5. Работа с querySelectorAll</h2>
+
+    <p class="description">Первый абзац</p>
+    <p class="other">Абзац без класса description</p>
+    <p class="description">Второй абзац</p>
+    <p class="other">Абзац без класса description</p>
+
+    <hr>
+
+    <h2>Задание 6. Добавление нового элемента в DOM</h2>
+
+    <button class="add-button">Добавить элемент</button>
+
+    <hr>
+
+    <h2>Задание 7. Удаление элемента</h2>
+
+    <p class="description">Первый абзац для удаления</p>
+    <p class="description">Второй абзац для удаления</p>
+    <p class="description">Третий абзац для удаления</p>
+
+    <button class="remove-button">Удалить элемент</button>
+
+    <script>
+        // Задание 1. Скрытие и показ текста
+
+        const toggleTitle = document.querySelector('.toggle-title');
+        const toggleButton = document.querySelector('.toggle-button');
+
+        toggleButton.addEventListener('click', function () {
+            if (toggleTitle.style.display === 'none') {
+                toggleTitle.style.display = 'block';
+                toggleButton.textContent = 'Скрыть';
+            } else {
+                toggleTitle.style.display = 'none';
+                toggleButton.textContent = 'Показать';
+            }
+        });
+
+
+        // Задание 2. Изменение стиля элемента
+
+        const colorText = document.querySelector('.color-text');
+        const colorButton = document.querySelector('.color-button');
+
+        colorButton.addEventListener('click', function () {
+            colorText.style.color = 'blue';
+        });
+
+
+        // Задание 3. Динамическое изменение текста
+
+        const changeTitle = document.querySelector('.change-title');
+        const changeButton = document.querySelector('.change-button');
+
+        changeButton.addEventListener('click', function () {
+            changeTitle.textContent = 'Привет, мир!';
+        });
+
+
+        // Задание 4. Поиск и изменение элементов по классу
+
+        const descriptions = document.querySelectorAll('.description');
+
+        descriptions.forEach(function (description) {
+            description.textContent = 'Измененный текст';
+        });
+
+
+        // Задание 5. Работа с querySelectorAll
+
+        const paragraphs = document.querySelectorAll('.description');
+
+        paragraphs.forEach(function (paragraph) {
+            paragraph.textContent = 'Новый текст';
+        });
+
+
+        // Задание 6. Добавление нового элемента в DOM
+
+        const addButton = document.querySelector('.add-button');
+
+        addButton.addEventListener('click', function () {
+            const newParagraph = document.createElement('p');
+
+            newParagraph.textContent = 'Новый абзац';
+
+            document.body.appendChild(newParagraph);
+        });
+
+
+        // Задание 7. Удаление элемента
+
+        const removeButton = document.querySelector('.remove-button');
+
+        removeButton.addEventListener('click', function () {
+            const paragraph = document.querySelector('.description');
+
+            if (paragraph) {
+                paragraph.remove();
+            }
+        });
+    </script>
+
+</body>
+
+</html>
