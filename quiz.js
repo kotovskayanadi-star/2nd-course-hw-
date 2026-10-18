@@ -11,11 +11,11 @@ function playGuessNumber(event) {
     while (true) {
         userNumber = prompt("Угадай число от 1 до 100:");
 
-if (userNumber === null) {
+        if (userNumber === null) {
             alert("Игра отменена.");
             return;
         }
-         
+
         if (userNumber.trim() === "") {
             alert("Поле ввода не может быть пустым. Попробуй ещё раз.");
             continue;
@@ -70,7 +70,7 @@ function playArithmetic(event) {
         }
     }
 
-let userAnswer;
+    let userAnswer;
 
     while (true) {
         userAnswer = prompt(
@@ -109,7 +109,7 @@ let userAnswer;
 function playReverseText(event) {
     event.preventDefault();
 
- let userText;
+    let userText;
 
     while (true) {
         userText = prompt("Введите текст:");
@@ -261,6 +261,29 @@ function playQuiz(event) {
     alert(`Викторина завершена!\nПравильных ответов: ${correctCount} из ${quiz.length}.`);
 }
 
+// Игра 6
+
+const colorGameButton = document.querySelector('#game6 .mini-game__button');
+
+colorGameButton.addEventListener('click', function (event) {
+    event.preventDefault();
+
+    const randomColor = '#' + Math.floor(Math.random() * 16777216)
+        .toString(16)
+        .padStart(6, '0');
+
+    document.body.style.backgroundColor = randomColor;
+
+    document.querySelector('.hero').style.backgroundImage = 'none';
+    document.querySelector('.about-games').style.backgroundImage = 'none';
+    document.querySelector('.mini-games').style.backgroundImage = 'none';
+
+    document.querySelector('.hero').style.backgroundColor = randomColor;
+    document.querySelector('.about-games').style.backgroundColor = randomColor;
+    document.querySelector('.mini-games').style.backgroundColor = randomColor;
+});
+
+
 // Игра 1
 document
     .querySelector("#game1 .mini-game__button")
@@ -275,7 +298,90 @@ document
 document
     .querySelector("#game3 .mini-game__button")
     .addEventListener("click", playReverseText);
-    // Игра 4
+// Игра 4
 document
     .querySelector("#game4 .mini-game__button")
     .addEventListener("click", playRockPaperScissors);
+
+// скролл кнопки "Поехали!" 
+
+
+const startButton = document.querySelector('.hero__button');
+const aboutGames = document.querySelector('#about-games');
+
+startButton.addEventListener('click', function () {
+    const startPosition = window.scrollY;
+    const targetPosition = aboutGames.getBoundingClientRect().top + window.scrollY;
+    const distance = targetPosition - startPosition;
+    const duration = 1800;
+    let startTime = null;
+
+    function animateScroll(currentTime) {
+        if (startTime === null) {
+            startTime = currentTime;
+        }
+
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+
+        const ease = progress < 0.5
+            ? 4 * progress * progress * progress
+            : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+        window.scrollTo(0, startPosition + distance * ease);
+
+        if (progress < 1) {
+            requestAnimationFrame(animateScroll);
+        }
+    }
+
+    requestAnimationFrame(animateScroll);
+});
+
+//скролл об "Об играх"
+
+
+const gameCards = document.querySelectorAll('.game-card');
+
+gameCards.forEach(function (card) {
+    card.addEventListener('click', function (event) {
+        event.preventDefault();
+
+        const gameId = card.getAttribute('href');
+        const targetGame = document.querySelector(gameId);
+
+        if (!targetGame) return;
+
+        const startPosition = window.scrollY;
+        const targetPosition =
+            targetGame.getBoundingClientRect().top + window.scrollY;
+
+        const distance = targetPosition - startPosition;
+
+
+        const speed = 300;
+
+        const duration = Math.abs(distance) / speed * 500;
+        let startTime = null;
+
+        function animateScroll(currentTime) {
+            if (startTime === null) {
+                startTime = currentTime;
+            }
+
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            window.scrollTo(
+                0,
+                startPosition + distance * progress
+            );
+
+            if (progress < 1) {
+                requestAnimationFrame(animateScroll);
+            }
+        }
+
+        requestAnimationFrame(animateScroll);
+    });
+});
